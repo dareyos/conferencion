@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Конференция от А до Я</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-image: url('background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 100vh;
+            background-color: #b8a8eb;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 50%;
+            height: 200px;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+
+        button {
+            background-color: #f19736;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #a87339;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Добро пожаловать на конференцию!</h1>
+        <p>На данной странице вы можете создать план конферернции.</p>
+    </div>
+
+    <head>
+        <title>План конференции</title>
+        <style>
+            label {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            input[type="text"] {
+                width: 100%;
+                padding: 5px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                margin-bottom: 10px;
+            }
+
+            textarea {
+                width: 100%;
+                height: 200px;
+                padding: 5px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                margin-bottom: 10px;
+            }
+
+            button {
+                background-color: #f19736;
+                color: #fff;
+                padding: 10px;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>План конференции</h1>
+        <form id="conference-form">
+            <label for="conference-name">Название конференции:</label>
+            <input type="text" id="conference-name" name="conference-name">
+
+            <label for="date">Дата и время:</label>
+            <input type="text" id="date" name="date">
+
+            <label for="location">Место:</label>
+            <input type="text" id="location" name="location">
+
+            <label for="theme">Тема:</label>
+            <input type="text" id="theme" name="theme">
+
+            <label for="content">Содержание:</label>
+            <textarea id="content" name="content"></textarea>
+
+            <label for="goals">Цели:</label>
+            <input type="text" id="goals" name="goals">
+
+            <label for="tasks">Задачи:</label>
+            <input type="text" id="tasks" name="tasks">
+
+            <label for="members">Организационный комитет:</label>
+            <input type="text" id="members" name="members">
+
+            <label for="stages">Этапы:</label>
+            <textarea id="stages" name="stages"></textarea>
+
+            <label for="sections">Секции:</label>
+            <textarea id="sections" name="sections"></textarea>
+
+            <label for="round_table">Круглый стол:</label>
+            <textarea id="round_table" name="round_table"></textarea>
+
+            <label for="focus_group">Фокус-группа:</label>
+            <input type="text" id="focus_group" name="focus_group">
+
+            <label for="mk">Мастер класс:</label>
+            <textarea id="mk" name="mk"></textarea>
+
+            <button type="submit">Создать план конференции</button>
+        </form>
+
+        <script>
+            // обработка отправки формы
+            document.getElementById('conference-form').addEventListener('submit', function (event) {
+                event.preventDefault(); // отменяем стандартное поведение формы
+
+                // получаем данные из формы
+                var conferenceName = document.getElementById('conference-name').value;
+                var date = document.getElementById('date').value;
+                var location = document.getElementById('location').value;
+                var theme = document.getElementById('theme').value;
+                var content = document.getElementById('content').value;
+                var goals = document.getElementById('goals').value;
+                var tasks = document.getElementById('tasks').value;
+                var members = document.getElementById('members').value;
+                var stages = document.getElementById('stages').value;
+                var sections = document.getElementById('sections').value;
+                var round_table = document.getElementById('round_table').value;
+                var mk = document.getElementById('mk').value;
+                var focus_group = document.getElementById('focus_group').value;
+
+                // создаем шаблон для плана конференции
+                var template =
+                    `
+                    Конференция "${conferenceName}"
+                    Тема: ${theme}
+
+                    Дата: ${date}
+                    Место: ${location}
+   
+                    Содержание:
+                    ${content}
+
+                    Цели: 
+                    ${goals}
+                    Задачи: 
+                    ${tasks}
+
+                    Этапы: ${stages}
+
+                    Организационный комитет: 
+                    ${members}
+                    
+                    Секции: ${sections}
+
+                    Фокус-группа: 
+                    ${focus_group}
+
+                    Мастер класс: ${mk}
+
+                    Круглый стол: ${round_table}
+                    `;
+
+                // создаем файл с планом конференции
+                var file = new Blob([template], { type: 'text/plain' });
+                var a = document.createElement('a');
+                a.href = URL.createObjectURL(file);
+                a.download = 'conference_plan.txt';
+                a.setAttribute('directory', 'Загрузки'); // указываем папку загрузки
+                a.click();
+            });
+        </script>
+    </body>
+
+</html>
