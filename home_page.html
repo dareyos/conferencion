@@ -6,7 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        @media (min-width: 1024px) {
+            html {
+                max-height: 100vh;
+            }
+        }
         body {
+            max-height: 100vh;
             background-image: url('background.jpg');
             background-repeat: no-repeat;
             background-size: cover;
@@ -38,6 +44,11 @@
             margin-bottom: 20px;
 
         }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 36px;
+            }
+        }
 
         p {
             font-size: 36px;
@@ -45,12 +56,18 @@
             margin-bottom: 20px;
             text-align: justify;
         }
+        @media (max-width: 600px) {
+            p {
+                font-size: 24px;
+            }
+        }
 
         button {
             background-color: #583200;
             color: white;
             border: none;
-            padding: 10px 225px;
+            width: 100%;
+            padding: 10px;
             font-size: 36px;
             cursor: pointer;
             border-radius: 10px;
@@ -58,6 +75,11 @@
 
         button:hover {
             background-color: #ef7d00;
+        }
+        @media (max-width: 600px) {
+            button {
+                font-size:  24px;
+            }
         }
     </style>
 </head>

@@ -10,12 +10,17 @@
             background-image: url('background.jpg');
             background-repeat: no-repeat;
             background-size: cover;
-            background-size: 100%;
             min-height: 100vh;
             background-color: #b8a8eb;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+        }
+
+        @media (min-width: 600px) {
+            body {
+                background-size: 100%;
+            }
         }
 
         .container {
@@ -29,6 +34,12 @@
             font-size: 36px;
             margin-top: 0;
             margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
         }
 
         p {
@@ -86,7 +97,8 @@
 <body>
     <div class="container">
         <h1>Добро пожаловать!</h1>
-        <p>Вы находитесь на странице "Я организатор", тут вы можете создать программу конференции и сохранить ее в текстовом формате.</p>
+        <p>Вы находитесь на странице "Я организатор", тут вы можете создать программу конференции и сохранить ее в
+            текстовом формате.</p>
     </div>
 
     <head>
